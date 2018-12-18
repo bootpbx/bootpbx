@@ -4,29 +4,18 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "t_user")
-public class User {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id")
-    private Long userId;
-
+public class User extends BaseEntity<Long> {
+    /**
+     * 用户名
+     */
     @Column(name = "name")
     private String name;
 
-    @Column(name = "username")
-    private String username;
-
+    /**
+     * 密码
+     */
     @Column(name = "password")
     private String password;
-
-    public Long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
 
     public String getName() {
         return name;
@@ -34,14 +23,6 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
     }
 
     public String getPassword() {
