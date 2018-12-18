@@ -37,6 +37,9 @@ configurations {
 }
 
 dependencies {
+
+	compile fileTree(dir: "libs", include: "*.jar")
+
 	implementation('org.springframework.boot:spring-boot-starter-amqp')
 	implementation('org.springframework.boot:spring-boot-starter-data-elasticsearch')
 	implementation('org.springframework.boot:spring-boot-starter-data-jpa')
@@ -52,4 +55,11 @@ dependencies {
 	providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
 	testImplementation('org.springframework.restdocs:spring-restdocs-mockmvc')
+
+	compile 'io.netty:netty-all:4.1.17.Final'
+	compile 'com.google.guava:guava:23.4-jre'
+	compile 'org.slf4j:slf4j-api:1.7.25'
+	runtime 'ch.qos.logback:logback-classic:1.2.3'
+	testCompile 'junit:junit:4.8.1'
+
 }

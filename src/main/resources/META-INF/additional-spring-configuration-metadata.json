@@ -1,0 +1,23 @@
+{
+  "properties": [
+    {
+      "name": "freeswitch.esl.host",
+      "type": "java.lang.String",
+      "description": "Description for freeswitch.esl.host."
+    },
+    {
+      "name": "freeswitch.esl.port",
+      "type": "java.lang.Integer",
+      "description": "Description for freeswitch.esl.port."
+    },
+    {
+      "name": "freeswitch.esl.password",
+      "type": "java.lang.String",
+      "description": "Description for freeswitch.esl.password."
+    },
+    {
+      "name": "freeswitch.esl.timout",
+      "type": "java.lang.Integer",
+      "description": "Description for freeswitch.esl.timout."
+    }
+  ] }
