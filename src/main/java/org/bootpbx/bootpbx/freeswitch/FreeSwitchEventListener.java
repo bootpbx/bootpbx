@@ -33,10 +33,10 @@ public class FreeSwitchEventListener implements ApplicationRunner {
     @Value("${freeswitch.esl.password}")
     private String password;
 
-    @Value("${freeswitch.esl.timout}")
-    private Integer timout;
+    @Value("${freeswitch.esl.timeout}")
+    private Integer timeout;
 
-    private static Logger logger = LoggerFactory.getLogger(FreeSwitchEventListener.class);
+    private final static Logger logger = LoggerFactory.getLogger(FreeSwitchEventListener.class);
 
     @Override
     public void run(ApplicationArguments args) {
@@ -49,7 +49,7 @@ public class FreeSwitchEventListener implements ApplicationRunner {
 
             client.addEventListener((ctx, event) -> logger.info("Received event: {}", event.getEventName()));
 
-            client.connect(new InetSocketAddress(host, port), password, timout);
+            client.connect(new InetSocketAddress(host, port), password, timeout);
             //client.setEventSubscriptions(EventFormat.PLAIN, "all");
             client.setEventSubscriptions(EventFormat.PLAIN, "CHANNEL_ANSWER");
             client.setEventSubscriptions(EventFormat.PLAIN, "CHANNEL_HANGUP");
